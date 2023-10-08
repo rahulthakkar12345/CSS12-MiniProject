@@ -1,0 +1,111 @@
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+/* From Top */
+.overlaytop {
+  position: absolute;
+  bottom: 100%; /* Leave 100% of available space from bottom, So this will be on Top */
+  left: 0; /* no space from left */
+  right: 0;  /* no space from right */
+  background-color: #008CBA;
+  overflow: hidden;/* we will hide the content which is too big for container  */
+  width: 100%; /* 100% width of container */
+  height:0;/* we will set height to 0, we will make it 100% on hover to cover entire container. */
+  transition: .5s ease; /* transition effect on hover */
+}
+
+.container:hover .overlaytop {
+  /* On Hover, we want to leave no space from bottom and also change height to 100%.
+  This will show overlaytop <div> move from top to bottom of container with increase in height,
+ resulting in top to bottom animation with transition effect  */
+  bottom: 0;
+  height: 100%;
+}
+
+
+
+/* From Bottom */
+/* Same as before just change in position of overlay container from top to now bottom */
+.overlaybottom {
+  position: absolute;
+  bottom: 0; /* Leave no space from bottom, So this will be now in bottom,
+                overlay is already coded in HTML below the image element */
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.container:hover .overlaybottom {
+  /* same as overlaytop */
+  bottom: 0;
+  height: 100%;
+}
+
+
+
+/* From Right */
+.overlayright {
+  position: absolute;
+  bottom: 0;
+  left: 100%; /*   here we will set overlay to right so,
+                   we will leave all available space from left */
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 0; /* width is 0 which we will change to 100% on hover */
+  height: 100%; /* height will be 100% but not visible as width is 0 currently */
+  transition: .5s ease;
+}
+
+.container:hover .overlayright {
+   /* On Hover, we want to leave no space from left and also change width to 100%.
+  This will show overlaytop <div> move from right to left of container with increase in width,
+ resulting in right to left animation with transition effect  */
+  width: 100%;
+  left: 0;
+}
+
+
+/* From Left */
+/* Same as before just change in position of overlay container from right to now left */
+.overlayleft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.container:hover .overlayleft {
+  width: 100%;
+}
